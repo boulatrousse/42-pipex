@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:04:25 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:09:27 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:14:56 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ void	command_manager(int status, int *pipefd, char **argv, char **envp)
 		second_command(fd_out, pipefd, argv, envp);
 	close(pipefd[0]);
 	close(pipefd[1]);
-	close(STDIN_FILENO);
-	close(STDOUT_FILENO);
+	close(STDIN);
+	close(STDOUT);
 	waitpid(c_id1, &status, 0);
 	waitpid(c_id2, &status, 0);
 }

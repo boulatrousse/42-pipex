@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:07:39 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:09:21 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:15:59 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char		**ft_command(char *str);
 char		*valid_path(int i, char **envp, char *str);
 void		close_fd(int i);
 void		display_error(char *str);
-void		close_all(int *pipefd);
 
 //----------------------------- COMMANDS -------------------------------------
 

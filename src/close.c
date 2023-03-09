@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:42:33 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:06:38 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:15:54 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,6 @@ void	close_fd(int i)
 		close(i);
 		i++;
 	}
-}
-
-void	close_all(int *pipefd)
-{
-	close(pipefd[0]);
-	close(pipefd[1]);
-	close(STDIN_FILENO);
-	close(STDOUT_FILENO);
 }
 
 void	free_array(char **array)
