@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 12:42:37 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:06:56 by lboulatr         ###   ########.fr       */
+/*   Created: 2023/03/09 16:52:33 by lboulatr          #+#    #+#             */
+/*   Updated: 2023/03/09 17:05:13 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **envp)
+void	display_error(char *str)
 {
-	int			pipefd[2];
+	ft_putstr_fd(str, 2);
+	exit(EXIT_FAILURE);
+}
 
-	if (argc == 5)
-	{
-		if (pipe(pipefd) < 0)
-			display_error("Pipe error.\n");
-		command_manager(pipefd, argv, envp);
-	}
-	else
-		display_error("Wrong number of arguments.\n");
-	close_fd(0);
-	return (0);
+void	error_cmd(char *str, char **cmd)
+{
+	write(2, str, ft_strlen(str));
+	free_array(cmd);
+	exit(EXIT_FAILURE);
+}
+
+void	exec_error(void)
+{
+	ft_putstr_fd("Command not found.\n", 2);
+	close_fd(3);
+}
+
+void	free_cmd(char **cmd)
+{
+	close_fd(3);
+	free_array(cmd);
+	exit(EXIT_FAILURE);
 }

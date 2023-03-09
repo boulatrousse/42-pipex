@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:07:39 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:15:59 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:06:49 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,13 @@ char		**ft_command(char *str);
 char		*valid_path(int i, char **envp, char *str);
 void		close_fd(int i);
 void		display_error(char *str);
+void		error_cmd(char *str, char **cmd);
+void		exec_error(void);
+void		free_cmd(char **cmd);
 
 //----------------------------- COMMANDS -------------------------------------
 
-void		command_manager(int status, int *pipefd, char **argv, char **envp);
+void		command_manager(int *pipefd, char **argv, char **envp);
+int			check_command(char *arg, char **cmd);
 
 #endif

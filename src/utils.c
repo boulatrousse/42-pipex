@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:42:40 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:03:56 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:05:05 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,18 @@ char	**ft_command(char *str)
 	if (!cmd)
 		return (NULL);
 	return (cmd);
+}
+
+int	check_command(char *arg, char **cmd)
+{
+	if (ft_strlen(arg) == 0)
+		return (ft_putstr_fd("Permission denied.\n", 2), -1);
+	if (arg[0] == ' ')
+		return (ft_putstr_fd("Command not found.\n", 2), -1);
+	if (access(cmd[0], F_OK) == 0)
+		return (0);
+	if (cmd[0])
+		if (ft_strnstr(cmd[0], "./", 2) != NULL)
+			return (ft_putstr_fd("No such file or directory\n", 2), -1);
+	return (0);
 }

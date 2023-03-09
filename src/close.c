@@ -6,7 +6,7 @@
 /*   By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:42:33 by lboulatr          #+#    #+#             */
-/*   Updated: 2023/03/09 13:15:54 by lboulatr         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:05:19 by lboulatr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,4 @@ void	free_array(char **array)
 	}
 	else
 		return ;
-}
-
-void	display_error(char *str)
-{
-	ft_putstr_fd(str, 2);
-	exit(EXIT_FAILURE);
 }

@@ -16,6 +16,7 @@ SRC									= 	main.c \
 										utils.c \
 										commands.c \
 										close.c \
+										error.c \
 
 OBJECTS								= $(SRC:%.c=$(BUILD_DIR)%.o)
 
