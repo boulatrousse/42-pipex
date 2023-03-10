@@ -6,7 +6,7 @@
 #    By: lboulatr <lboulatr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:06:34 by lboulatr          #+#    #+#              #
-#    Updated: 2023/02/23 14:40:41 by lboulatr         ###   ########.fr        #
+#    Updated: 2023/03/10 13:47:57 by lboulatr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(BUILD_DIR)%.o:        %.c $(HEADER)
 
 all:    			    $(NAME)    
 
-$(NAME):    		    $(OBJS) 
+$(NAME):    		    $(OBJS)
 					        $(LIB) $(NAME) $(OBJS) 
 
 clean:
