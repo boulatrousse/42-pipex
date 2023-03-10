@@ -29,7 +29,7 @@ CFLAGS								= -Wall -Werror -Wextra
 
 RM									= rm -rf
 
-$(BUILD_DIR)%.o:					$(DIR)%.c $(HEADER_DIR)/$(HEADER_FILE) $(LIBFT) $(LIB_DIR) Makefile
+$(BUILD_DIR)%.o:					$(DIR)%.c $(HEADER_DIR)/$(HEADER_FILE) $(LIB_DIR) Makefile
 										@mkdir -p $(@D)
 										$(GCC) $(CFLAGS) -I$(HEADER_DIR) -I$(LIB_DIR) -I/usr/include -c $< -o $@
 
